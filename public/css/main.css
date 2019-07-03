@@ -1,3 +1,6 @@
+html{
+    cursor: crosshair;
+}
 h1 {
 	margin: 1em 0 0.5em 0;
 	color: #343434;
@@ -6,7 +9,8 @@ h1 {
 	font-size: 36px;
 	line-height: 42px;
 	text-transform: uppercase;
-	text-shadow: 0 2px white, 0 3px #777;
+    text-shadow: 0 2px white, 0 3px #777;
+    cursor: crosshair;
 }
 
 button {
@@ -19,15 +23,27 @@ button {
 	font-family: 'Orienta', sans-serif;
 	letter-spacing: 1px;
     font-style: italic;
-    background-color: #5d6bd0;
+    background-color: #d5ae1e;
+    cursor: crosshair;
+    text-decoration: none;
 }
 
 body {
-    background-color: #5435b8; 
+    background-color: #770000; 
+    cursor:crosshair;
 }
 
 
 
 .nav-item {
+    background-color: #d5ae1e;
+
+}
+
+#divi {
     background-color: #343434
+}
+
+a {
+    color: #343434;
 }
