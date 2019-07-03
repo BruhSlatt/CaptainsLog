@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const urlEncoded = bodyParser.urlencoded({extended: false})
 
-
+const blogPosts = []
 // Server
 const app = express();
 
