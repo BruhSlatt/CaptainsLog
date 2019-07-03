@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const urlEncoded = bodyParser.urlencoded({extended: false})
 
+
 // Server
 const app = express();
 
@@ -65,6 +66,12 @@ app.get('/caplog15', (req, res) => {
     res.render('cap15');
 });
 
+//POST Routes 
+app.post('/logs', urlEncoded, (req, res) => {
+    let incomingEntry = {};
+    incomingEntry.logEntry = req.body.log;
+    res.redirect('/')
+});
 // Listening
 app.listen(3000, function(err){
     if (err)
