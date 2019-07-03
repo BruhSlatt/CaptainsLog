@@ -13,6 +13,11 @@ h1 {
     cursor: crosshair;
 }
 
+h4 {
+	color: #343434;
+	
+}
+
 button {
 	margin: 1em 0 0.5em 0;
 	color: #343434;
