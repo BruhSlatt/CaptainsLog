@@ -70,7 +70,7 @@ app.get('/caplog15', (req, res) => {
 app.post('/logs', urlEncoded, (req, res) => {
     let incomingEntry = {};
     incomingEntry.logEntry = req.body.log;
-    res.redirect('/')
+    res.redirect('/logs')
 });
 // Listening
 app.listen(3000, function(err){
