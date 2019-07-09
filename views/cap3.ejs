@@ -8,16 +8,46 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>Captain's Log #1</title>
 </head>
-<body">
+<body class="text-center">
     <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-                <a class="nav-link" href="/logs">List of Logs</a>
+            <a class="nav-link" href="/logs">List of Logs</a>
         </li>
     </ul>
-
+    <h2 class="display-4 mt-5">Captain's Log Entry #3</h1>
+    <h3 > 
+        <% for ( let i=0; i < blogPosts.length;  i++ ) { %>
+            <small class="text-muted mt-5" id="<%= i %>" ><%= date[i].date %></small>
+        <% } %>
+    </h3>
+    <br>
+    <h4 class="mt-5">
+            <% for ( let i=0; i < blogPosts.length;  i++ ) { %>
+                <h4 class="mt-5" id="<%= i %>" ><%= blogPosts[i].logEntry %></h4>
+            <% } %>
+        <form action="/logs" method="POST" class= "mx-auto text-center" > 
+            <input type="text" placeholder="Title" name="Title"  required>
+            <br>
+            <textarea placeholder="insert body text" name="Body" id="" cols="20" rows="5" class="mt-3"></textarea>
+            <br>
+            <button type="submit" class="mt-4" onClick="document.location.reload(true)">submit</button>
+    </form> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="caplog3"> 
+        <button type="button" class="btn btn-outline-dark"><h4>next log</h4></button>
+    </a>
     <script src="/js/main.js"></script>
 </body>
 </html>
