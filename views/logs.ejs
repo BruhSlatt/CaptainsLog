@@ -49,28 +49,18 @@
     <a href="caplog10">
             <button type="button" class="btn-lg btn-block mb-3">Log Entry #10</button>
     </a>
-    <a href="caplog11">
-            <button type="button" class="btn-lg btn-block mb-3">Log Entry #11</button>
-    </a>
-    <a href="caplog12">
-            <button type="button" class="btn-lg btn-block mb-3">Log Entry #12</button>
-    </a>
-    <a href="caplog13">
-            <button type="button" class="btn-lg btn-block mb-3">Log Entry #13</button>
-    </a>
-    <a href="caplog14">
-            <button type="button" class="btn-lg btn-block mb-3">Log Entry #14</button>
-    </a>
-    <a href="caplog15">
-            <button type="button" class="btn-lg btn-block mb-3">Log Entry #15</button>
-    </a>
-
+    <ul class="list-group list-group-flush mt-5 text-light">
+        <% for ( let i=0; i < blogPosts.length;  i++ ) { %>
+            <li class="list-group-item" id="<%= i %>" ><%= blogPosts[i].logEntry %></li>
+        <% } %>
+    </ul>
     </div>
-        <form action="/logs" method="POST"> 
+        <form action="/logs" method="POST" class= "mx-auto text-center" > 
                 <input type="text" placeholder="Title" name="Title">
                 <br>
                 <textarea placeholder="insert body text" name="Body" id="" cols="20" rows="5" class="mt-3"></textarea>
-                <button type="submit">submit</button>
+                <br>
+                <button type="submit" class="mt-4">submit</button>
         </form> 
     <script src="/js/main.js"></script>
 

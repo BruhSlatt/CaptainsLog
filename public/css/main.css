@@ -52,3 +52,7 @@ body {
 a {
     color: #343434;
 }
+
+.list-group-item {
+	background-color: #770000; 
+}

@@ -1,8 +1,16 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const urlEncoded = bodyParser.urlencoded({extended: false})
+const mysql      = require('mysql');
 
-const blogPosts = []
+const urlEncoded = bodyParser.urlencoded({extended: false})
+const db = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'admin',
+    password : 'student',
+    database : 'CapLogs'
+  });
+
+const postData = []
 // Server
 const app = express();
 
@@ -18,7 +26,7 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 });
 app.get('/logs', (req, res) => {
-    res.render('logs');
+    res.render('logs', {blogPosts: postData});
 });
 app.get('/caplog1', (req, res) => {
     res.render('cap1');
@@ -69,9 +77,20 @@ app.get('/caplog15', (req, res) => {
 //POST Routes 
 app.post('/logs', urlEncoded, (req, res) => {
     let incomingEntry = {};
-    incomingEntry.logEntry = req.body.log;
+    incomingEntry.logEntry = req.body.Title;
+    postData.push(incomingEntry)
     res.redirect('/logs')
 });
+
+app.post("/addpost", (req, res) => {
+    let post = {title: "my first post", body: "hello today was a good day"}
+    let sql = 'INSERT INTO posts SET ?'
+    db.query(sql, post, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send('first post added ...')
+    })
+})
 // Listening
 app.listen(3000, function(err){
     if (err)
