@@ -28,13 +28,16 @@
             <% for ( let i=0; i < blogPosts.length;  i++ ) { %>
                 <h4 class="mt-5" id="<%= i %>" ><%= blogPosts[i].logEntry %></h4>
             <% } %>
-        <form action="/logs" method="POST" class= "mx-auto text-center" > 
-            <input type="text" placeholder="Title" name="Title"  required>
+        <form action="/logPg3" method="POST" class= "mx-auto text-center" > 
+            <input type="text" placeholder="Date" name="DatePg3"  required>
             <br>
-            <textarea placeholder="insert body text" name="Body" id="" cols="20" rows="5" class="mt-3"></textarea>
+            <textarea placeholder="insert body text" name="BodyPg3" id="" cols="20" rows="5" class="mt-3"></textarea>
             <br>
-            <button type="submit" class="mt-4" onClick="document.location.reload(true)">submit</button>
-    </form> 
+            <button type="submit" class="mt-4" >submit</button>
+        </form> 
+        <form action="">
+            <button type="button" class="mt-3" >CLEAR</button>
+        </form>
     <br>
     <br>
     <br>
